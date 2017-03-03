@@ -35,6 +35,7 @@
     "d3": "4.5.0",
     "d3-ng2-service": "^1.6.0",
     "dotenv": "^4.0.0",
+    "electron-updater": "^1.8.1",
     "font-awesome": "^4.7.0",
     "ng2-bootstrap": "^1.3.1",
     "rxjs": "^5.1.0",
@@ -45,16 +46,20 @@
     "appId": "com.electron.amo-tools-desktop",
     "copyright": "Copyright 2017 ORNL. All rights reserved.",
     "productName": "AMO-Tools-Desktop",
-    "iconUrl": "https://raw.githubusercontent.com/ORNL-AMO/AMO-Tools-Desktop/blob/develop/src/favicon.ico",
+    "iconUrl": "https://github.com/ORNL-AMO/AMO-Tools-Desktop/blob/master/src/favicon.ico?raw=true",
+    "autoDownload": "true",
     "directories": {
-      "buildResources": "../AMO-Tools-Desktop/src/",
       "output": "../output/"
     },
     "win": {
-      "target": "squirrel"
+      "target": "nsis",
+      "icon": "../AMO-Tools-Desktop/src/favicon-win.ico",
+      "publish": "github"
     },
-    "windowsSquirrel": {
-      "msi": "true"
+    "nsis": {
+      "oneClick": "true",
+      "runAfterFinish": "true",
+      "installerIcon": "../AMO-Tools-Desktop/src/favicon.ico"
     },
     "linux": {
       "target": "tar.gz"
@@ -73,9 +78,9 @@
     "codelyzer": "~2.0.0",
     "css-loader": "^0.26.2",
     "electron": "^1.4.15",
-    "electron-builder": "^13.9.0",
+    "electron-builder": "13.9.0",
     "electron-builder-squirrel-windows": "^13.6.1",
-    "electron-packager": "",
+    "electron-packager": "^8.5.2",
     "electron-rebuild": "^1.5.7",
     "jasmine-core": "~2.5.2",
     "jasmine-spec-reporter": "~3.2.0",
